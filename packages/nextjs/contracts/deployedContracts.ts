@@ -692,696 +692,8 @@ const deployedContracts = {
       ],
       inheritedFunctions: {},
     },
-  },
-  31337: {
-    ProfileNFT: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      abi: [
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_owner",
-              type: "address",
-            },
-          ],
-          stateMutability: "nonpayable",
-          type: "constructor",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: false,
-              internalType: "address[]",
-              name: "recipients",
-              type: "address[]",
-            },
-            {
-              indexed: false,
-              internalType: "uint256[]",
-              name: "tokenIds",
-              type: "uint256[]",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-          ],
-          name: "BatchNFTMinted",
-          type: "event",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "oldFee",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "newFee",
-              type: "uint256",
-            },
-          ],
-          name: "MintFeeUpdated",
-          type: "event",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: true,
-              internalType: "address",
-              name: "to",
-              type: "address",
-            },
-            {
-              indexed: true,
-              internalType: "uint256",
-              name: "tokenId",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-          ],
-          name: "NFTMinted",
-          type: "event",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: true,
-              internalType: "address",
-              name: "walletAddress",
-              type: "address",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "name",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "role",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-          ],
-          name: "ProfileCreated",
-          type: "event",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: true,
-              internalType: "address",
-              name: "walletAddress",
-              type: "address",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "name",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "string",
-              name: "role",
-              type: "string",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-          ],
-          name: "ProfileUpdated",
-          type: "event",
-        },
-        {
-          inputs: [
-            {
-              internalType: "string",
-              name: "_fileUrl",
-              type: "string",
-            },
-          ],
-          name: "addFileUrl",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address[]",
-              name: "_recipients",
-              type: "address[]",
-            },
-            {
-              internalType: "string",
-              name: "_metadataUri",
-              type: "string",
-            },
-          ],
-          name: "batchMintProfileNFT",
-          outputs: [],
-          stateMutability: "payable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "_recipientCount",
-              type: "uint256",
-            },
-          ],
-          name: "calculateBatchMintFee",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "string",
-              name: "_name",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_role",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_introduction",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_skills",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_contact",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_portfolioLink",
-              type: "string",
-            },
-            {
-              internalType: "string[]",
-              name: "_fileUrls",
-              type: "string[]",
-            },
-          ],
-          name: "createProfile",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_walletAddress",
-              type: "address",
-            },
-          ],
-          name: "getProfileByWallet",
-          outputs: [
-            {
-              internalType: "address",
-              name: "walletAddress",
-              type: "address",
-            },
-            {
-              internalType: "string",
-              name: "name",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "role",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "introduction",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "skills",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "contact",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "portfolioLink",
-              type: "string",
-            },
-            {
-              internalType: "string[]",
-              name: "fileUrls",
-              type: "string[]",
-            },
-            {
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "_tokenId",
-              type: "uint256",
-            },
-          ],
-          name: "getTokenInfo",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "tokenId",
-              type: "uint256",
-            },
-            {
-              internalType: "address",
-              name: "tokenOwner",
-              type: "address",
-            },
-            {
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              internalType: "uint256",
-              name: "mintedAt",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_walletAddress",
-              type: "address",
-            },
-          ],
-          name: "getUserFileUrls",
-          outputs: [
-            {
-              internalType: "string[]",
-              name: "",
-              type: "string[]",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_walletAddress",
-              type: "address",
-            },
-          ],
-          name: "getUserTokens",
-          outputs: [
-            {
-              internalType: "uint256[]",
-              name: "",
-              type: "uint256[]",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "mintFee",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_to",
-              type: "address",
-            },
-            {
-              internalType: "string",
-              name: "_metadataUri",
-              type: "string",
-            },
-          ],
-          name: "mintProfileNFT",
-          outputs: [],
-          stateMutability: "payable",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "nextTokenId",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          name: "nftTokens",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "tokenId",
-              type: "uint256",
-            },
-            {
-              internalType: "address",
-              name: "owner",
-              type: "address",
-            },
-            {
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              internalType: "uint256",
-              name: "mintedAt",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "owner",
-          outputs: [
-            {
-              internalType: "address",
-              name: "",
-              type: "address",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_walletAddress",
-              type: "address",
-            },
-          ],
-          name: "profileExists",
-          outputs: [
-            {
-              internalType: "bool",
-              name: "",
-              type: "bool",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "_newFee",
-              type: "uint256",
-            },
-          ],
-          name: "setMintFee",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          name: "tokenOwners",
-          outputs: [
-            {
-              internalType: "address",
-              name: "",
-              type: "address",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "totalSupply",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "string",
-              name: "_name",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_role",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_introduction",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_skills",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_contact",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "_portfolioLink",
-              type: "string",
-            },
-            {
-              internalType: "string[]",
-              name: "_fileUrls",
-              type: "string[]",
-            },
-          ],
-          name: "updateProfile",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "",
-              type: "address",
-            },
-          ],
-          name: "userProfiles",
-          outputs: [
-            {
-              internalType: "address",
-              name: "walletAddress",
-              type: "address",
-            },
-            {
-              internalType: "string",
-              name: "name",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "role",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "introduction",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "skills",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "contact",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "portfolioLink",
-              type: "string",
-            },
-            {
-              internalType: "string",
-              name: "metadataUri",
-              type: "string",
-            },
-            {
-              internalType: "uint256",
-              name: "timestamp",
-              type: "uint256",
-            },
-            {
-              internalType: "bool",
-              name: "exists",
-              type: "bool",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "",
-              type: "address",
-            },
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          name: "userTokens",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "withdraw",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          stateMutability: "payable",
-          type: "receive",
-        },
-      ],
-      inheritedFunctions: {},
-    },
     ProfileNFT1155: {
-      address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      address: "0x2f3CAA453eFB3cE87A7e18058EB553f598526D58",
       abi: [
         {
           inputs: [
@@ -2697,6 +2009,694 @@ const deployedContracts = {
         totalSupply:
           "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol",
       },
+    },
+  },
+  31337: {
+    ProfileNFT: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address[]",
+              name: "recipients",
+              type: "address[]",
+            },
+            {
+              indexed: false,
+              internalType: "uint256[]",
+              name: "tokenIds",
+              type: "uint256[]",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+          ],
+          name: "BatchNFTMinted",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "oldFee",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "newFee",
+              type: "uint256",
+            },
+          ],
+          name: "MintFeeUpdated",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+          ],
+          name: "NFTMinted",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "walletAddress",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "name",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "role",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+          ],
+          name: "ProfileCreated",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "walletAddress",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "name",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "role",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+          ],
+          name: "ProfileUpdated",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_fileUrl",
+              type: "string",
+            },
+          ],
+          name: "addFileUrl",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address[]",
+              name: "_recipients",
+              type: "address[]",
+            },
+            {
+              internalType: "string",
+              name: "_metadataUri",
+              type: "string",
+            },
+          ],
+          name: "batchMintProfileNFT",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_recipientCount",
+              type: "uint256",
+            },
+          ],
+          name: "calculateBatchMintFee",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_role",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_introduction",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_skills",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_contact",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_portfolioLink",
+              type: "string",
+            },
+            {
+              internalType: "string[]",
+              name: "_fileUrls",
+              type: "string[]",
+            },
+          ],
+          name: "createProfile",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_walletAddress",
+              type: "address",
+            },
+          ],
+          name: "getProfileByWallet",
+          outputs: [
+            {
+              internalType: "address",
+              name: "walletAddress",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "name",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "role",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "introduction",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "skills",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "contact",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "portfolioLink",
+              type: "string",
+            },
+            {
+              internalType: "string[]",
+              name: "fileUrls",
+              type: "string[]",
+            },
+            {
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getTokenInfo",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "tokenOwner",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "mintedAt",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_walletAddress",
+              type: "address",
+            },
+          ],
+          name: "getUserFileUrls",
+          outputs: [
+            {
+              internalType: "string[]",
+              name: "",
+              type: "string[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_walletAddress",
+              type: "address",
+            },
+          ],
+          name: "getUserTokens",
+          outputs: [
+            {
+              internalType: "uint256[]",
+              name: "",
+              type: "uint256[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "mintFee",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_to",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "_metadataUri",
+              type: "string",
+            },
+          ],
+          name: "mintProfileNFT",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "nextTokenId",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "nftTokens",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "mintedAt",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_walletAddress",
+              type: "address",
+            },
+          ],
+          name: "profileExists",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_newFee",
+              type: "uint256",
+            },
+          ],
+          name: "setMintFee",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "tokenOwners",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_role",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_introduction",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_skills",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_contact",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_portfolioLink",
+              type: "string",
+            },
+            {
+              internalType: "string[]",
+              name: "_fileUrls",
+              type: "string[]",
+            },
+          ],
+          name: "updateProfile",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "userProfiles",
+          outputs: [
+            {
+              internalType: "address",
+              name: "walletAddress",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "name",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "role",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "introduction",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "skills",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "contact",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "portfolioLink",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "metadataUri",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "timestamp",
+              type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "exists",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "userTokens",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "withdraw",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
     },
   },
 } as const;
